@@ -1,0 +1,66 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #009A17;
+    height: 100vh;
+    overflow: hidden;
+    .game {
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        #player {
+            z-index: 1;
+            width: 30px; 
+            height: 40px;
+            background-color: aqua; 
+            position: absolute;
+            .weapon {
+                width: 100%;
+                height: 20px;
+                border: 3px solid black;
+                border-radius: 50%;
+                border-bottom: none;
+                border-left: none;
+                border-right: none;
+                opacity: 0;
+            }
+
+        }
+    
+        .coin {
+            width: 15px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #FDDA16;
+            position: absolute;
+        }
+
+    }
+}
+
+
+.attackAction {
+    animation-name: attack;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    transition: 10ms ease-out;
+}
+
+@keyframes attack {
+    0% {
+        transform: translateY(0%);
+    }
+    50%{
+        opacity: 1;
+        transform: translateY(-30px);
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

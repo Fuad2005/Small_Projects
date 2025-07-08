@@ -1,0 +1,89 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #009A17;
+  height: 100vh;
+  overflow: hidden;
+}
+
+body .game {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+body .game #player {
+  z-index: 1;
+  width: 30px;
+  height: 40px;
+  background-color: aqua;
+  position: absolute;
+}
+
+body .game #player .weapon {
+  width: 100%;
+  height: 20px;
+  border: 3px solid black;
+  border-radius: 50%;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  opacity: 0;
+}
+
+body .game .coin {
+  width: 15px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #FDDA16;
+  position: absolute;
+}
+
+.attackAction {
+  -webkit-animation-name: attack;
+          animation-name: attack;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-transition: 10ms ease-out;
+  transition: 10ms ease-out;
+}
+
+@-webkit-keyframes attack {
+  0% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes attack {
+  0% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/*# sourceMappingURL=game.css.map */
