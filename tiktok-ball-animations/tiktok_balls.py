@@ -70,7 +70,6 @@ while running:
 
         if ball.pos[1] > HEIGHT or ball.pos[0] < 0 or ball.pos[0] > WIDTH or ball.pos[1] < 0:
             ball_counter += 1
-            print(ball_counter)
             balls.remove(ball)
             balls.append(Ball(position=[WIDTH // 2, HEIGHT // 2 - 120], velocity=[random.uniform(-4 ,4), random.uniform(-1 ,1)]))
             balls.append(Ball(position=[WIDTH // 2, HEIGHT // 2 - 120], velocity=[random.uniform(-4 ,4), random.uniform(-1 ,1)]))
@@ -99,6 +98,10 @@ while running:
     draw_arc(window, CIRCLE_CENTER, CIRCLE_RADIUS, start_angle, end_angle)
     for ball in balls:
         pygame.draw.circle(window, ball.color, ball.pos, BALL_RADIUS)
+    
+    font = pygame.font.SysFont("Arial", 16)
+    text = font.render("Ball Counter: " + str(ball_counter), True, (255, 255, 255))
+    window.blit(text, (10, 10))
     pygame.display.flip()
 
     clock.tick(60)
